@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Ignorar arquivos temporários locais de documentação e rascunhos da IA
+dev-docs/scratch/
+.agents/scratch/
