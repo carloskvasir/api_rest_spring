@@ -14,3 +14,9 @@
 ## 📦 Padrões de Código
 - Utilize sempre DTOs para entrada/saída (nunca exponha ou receba as Entidades diretamente nos endpoints).
 - Faça tratamento centralizado de erros com `@RestControllerAdvice`.
+
+## 🧪 Qualidade de Software e Testes
+- Atue sempre como um analisador estático (um linter rigoroso): Aja ativamente validando legibilidade, complexidade ciclomática e adoção de boas práticas (Clean Code).
+- A regra é clara: NENHUMA nova funcionalidade, refatoração ou correção de bug deve ser concluída sem a devida cobertura de testes automatizados (Unitários e/ou de Integração).
+- Utilize a stack padrão do Spring Boot para testes: JUnit 5, AssertJ, Mockito e MockMvc.
+- Considere testes como a melhor documentação executável do sistema. Testes não são opcionais.
