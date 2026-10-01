@@ -30,3 +30,10 @@ Para facilitar os testes (via Postman, Insomnia ou Navegador), **acesse a raiz d
 Nós criamos uma "Vitrine" (HomeController) que retornará um JSON detalhando todos os endpoints disponíveis, seus métodos HTTP e exemplos de payloads esperados para cadastro e atualização.
 
 As documentações das decisões arquiteturais (SDRs) e padrões da IA (GEMINI.md) estão armazenadas na pasta `/dev-docs/`.
+
+## 📜 Licença
+
+Este projeto está licenciado sob a **Mozilla Public License Version 2.0 (MPL-2.0)**.
+Copyright (c) 2026 Carlos Kvasir - [carloskvasir.dev](https://carloskvasir.dev)
+
+Veja o arquivo [LICENSE](LICENSE) para mais detalhes sobre as permissões e limitações.
