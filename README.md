@@ -3,7 +3,7 @@
 Este projeto é uma API RESTful avançada desenvolvida em **Java + Spring Boot** para gerenciar um cadastro de livros, seguindo rigorosos padrões RESTful (RFC 7807, cabeçalhos Location, PATCH parcial) e arquitetura validada por SDRs (System Design Reviews). O armazenamento dos dados é realizado em memória.
 
 ## 👥 Alunos
-* Carlos Kvasir Lima
+* Carlos Kvasir Lima e David Marlon Pereira
 
 ## 🛠️ Tecnologias e Ferramentas
 
