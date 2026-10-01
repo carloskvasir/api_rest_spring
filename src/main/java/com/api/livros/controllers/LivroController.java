@@ -5,11 +5,13 @@ import com.api.livros.dtos.LivroResponseDTO;
 import com.api.livros.models.Livro;
 import com.api.livros.services.LivroService;
 import jakarta.validation.Valid;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
@@ -25,12 +27,22 @@ public class LivroController {
     @PostMapping
     public ResponseEntity<LivroResponseDTO> cadastrar(@Valid @RequestBody LivroRequestDTO dto) {
         Livro livroCriado = livroService.salvar(dto);
-        return new ResponseEntity<>(LivroResponseDTO.fromEntity(livroCriado), HttpStatus.CREATED);
+        
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(livroCriado.getId())
+                .toUri();
+
+        return ResponseEntity.created(location).body(LivroResponseDTO.fromEntity(livroCriado));
     }
 
     @GetMapping
-    public ResponseEntity<List<LivroResponseDTO>> listar() {
-        List<LivroResponseDTO> lista = livroService.listarTodos().stream()
+    public ResponseEntity<List<LivroResponseDTO>> listar(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        
+        List<LivroResponseDTO> lista = livroService.listarTodos(page, size).stream()
                 .map(LivroResponseDTO::fromEntity)
                 .collect(Collectors.toList());
         return ResponseEntity.ok(lista);
@@ -45,6 +57,12 @@ public class LivroController {
     @PutMapping("/{id}")
     public ResponseEntity<LivroResponseDTO> atualizar(@PathVariable Long id, @Valid @RequestBody LivroRequestDTO dto) {
         Livro livroAtualizado = livroService.atualizar(id, dto);
+        return ResponseEntity.ok(LivroResponseDTO.fromEntity(livroAtualizado));
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<LivroResponseDTO> atualizarParcial(@PathVariable Long id, @RequestBody Map<String, Object> campos) {
+        Livro livroAtualizado = livroService.atualizarParcial(id, campos);
         return ResponseEntity.ok(LivroResponseDTO.fromEntity(livroAtualizado));
     }
 

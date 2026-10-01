@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Service
@@ -25,8 +26,10 @@ public class LivroService {
         return livro;
     }
 
-    public List<Livro> listarTodos() {
-        return new ArrayList<>(livros);
+    public List<Livro> listarTodos(int page, int size) {
+        int start = Math.min(page * size, livros.size());
+        int end = Math.min((page + 1) * size, livros.size());
+        return new ArrayList<>(livros.subList(start, end));
     }
 
     public Livro buscarPorId(Long id) {
@@ -42,6 +45,25 @@ public class LivroService {
         livro.setAutor(dto.autor());
         livro.setQuantidadePaginas(dto.quantidadePaginas());
         livro.setPreco(dto.preco());
+        return livro;
+    }
+
+    public Livro atualizarParcial(Long id, Map<String, Object> campos) {
+        Livro livro = buscarPorId(id);
+        campos.forEach((campo, valor) -> {
+            switch (campo) {
+                case "titulo" -> livro.setTitulo((String) valor);
+                case "autor" -> livro.setAutor((String) valor);
+                case "quantidadePaginas" -> livro.setQuantidadePaginas((Integer) valor);
+                case "preco" -> {
+                    if (valor instanceof Integer v) {
+                        livro.setPreco(v.doubleValue());
+                    } else if (valor instanceof Double v) {
+                        livro.setPreco(v);
+                    }
+                }
+            }
+        });
         return livro;
     }
 
