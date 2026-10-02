@@ -26,7 +26,7 @@ git push origin v$NEXT_VERSION
 
 # Extrai as notas exatas da release recém-gerada
 npx --yes git-cliff --latest --strip header > .github_release_notes.md
-echo -e "\n---\n📖 **Histórico Completo:** Acesse nosso [CHANGELOG.md](https://github.com/carloskvasir/api_rest_spring/blob/main/CHANGELOG.md)." >> .github_release_notes.md
+echo -e "\n---\n📖 **Histórico Completo:** Acesse nosso [CHANGELOG.md](https://github.com/carloskvasir/api_rest_spring/blob/v$NEXT_VERSION/CHANGELOG.md)." >> .github_release_notes.md
 
 gh release create v$NEXT_VERSION -t "Release v$NEXT_VERSION" -F .github_release_notes.md
 rm .github_release_notes.md
