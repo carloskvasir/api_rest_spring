@@ -15,15 +15,16 @@ public class HomeController {
         Map<String, Object> apiInfo = new LinkedHashMap<>();
         apiInfo.put("nome", "API REST de Controle de Livros");
         apiInfo.put("status", "Online");
-        apiInfo.put("mensagem", "Bem-vindo! Utilize as rotas abaixo para interagir com a API.");
+        apiInfo.put("documentacao_swagger", "Acesse a interface interativa em: http://localhost:8000/swagger-ui.html");
         
         List<Map<String, String>> rotas = List.of(
             Map.of("metodo", "GET", "rota", "/livros", "descricao", "Lista todos os livros (suporta ?page=0&size=10)"),
             Map.of("metodo", "GET", "rota", "/livros/{id}", "descricao", "Busca um livro específico pelo ID"),
-            Map.of("metodo", "POST", "rota", "/livros", "descricao", "Cadastra um novo livro. Exemplo payload: {\"titulo\":\"Clean Code\",\"autor\":\"Robert Martin\",\"quantidadePaginas\":464,\"preco\":120.0}"),
-            Map.of("metodo", "PUT", "rota", "/livros/{id}", "descricao", "Atualiza integralmente os dados de um livro existente"),
-            Map.of("metodo", "PATCH", "rota", "/livros/{id}", "descricao", "Atualiza parcialmente os dados de um livro. Exemplo payload: {\"preco\": 150.0}"),
-            Map.of("metodo", "DELETE", "rota", "/livros/{id}", "descricao", "Remove um livro pelo ID")
+            Map.of("metodo", "POST", "rota", "/livros", "descricao", "Cadastra um novo livro."),
+            Map.of("metodo", "PUT", "rota", "/livros/{id}", "descricao", "Atualiza integralmente um livro"),
+            Map.of("metodo", "PATCH", "rota", "/livros/{id}", "descricao", "Atualiza parcialmente um livro"),
+            Map.of("metodo", "DELETE", "rota", "/livros/{id}", "descricao", "Remove um livro pelo ID"),
+            Map.of("metodo", "GET", "rota", "/swagger-ui.html", "descricao", "Interface visual OpenAPI (Swagger)")
         );
         
         apiInfo.put("rotas_disponiveis", rotas);
