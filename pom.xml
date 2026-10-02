@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.api</groupId>
 	<artifactId>livros</artifactId>
-	<version>1.4.0</version>
+	<version>1.5.0</version>
 	<name>livros</name>
 	<description>API REST de Controle de Livros</description>
 	<properties>
