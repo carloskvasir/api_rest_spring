@@ -15,7 +15,7 @@ public class HomeController {
         Map<String, Object> apiInfo = new LinkedHashMap<>();
         apiInfo.put("nome", "API REST de Controle de Livros");
         apiInfo.put("status", "Online");
-        apiInfo.put("documentacao_swagger", "Acesse a interface interativa em: http://localhost:8000/swagger-ui.html");
+        apiInfo.put("documentacao_swagger", "Acesse a interface interativa em: http://localhost:8080/swagger-ui.html");
         
         List<Map<String, String>> rotas = List.of(
             Map.of("metodo", "GET", "rota", "/livros", "descricao", "Lista todos os livros (suporta ?page=0&size=10)"),
