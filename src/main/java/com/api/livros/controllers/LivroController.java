@@ -5,6 +5,7 @@ import com.api.livros.dtos.LivroResponseDTO;
 import com.api.livros.models.Livro;
 import com.api.livros.services.LivroService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -16,13 +17,10 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/livros")
+@RequiredArgsConstructor
 public class LivroController {
 
     private final LivroService livroService;
-
-    public LivroController(LivroService livroService) {
-        this.livroService = livroService;
-    }
 
     @PostMapping
     public ResponseEntity<LivroResponseDTO> cadastrar(@Valid @RequestBody LivroRequestDTO dto) {
