@@ -15,6 +15,7 @@ Este índice serve como um mapa rápido para as inteligências artificiais e des
 | **SDR-005** | Experiência de Desenvolvimento (Hot-Reload com Volumes Docker) | [Acessar Documento](SDRs/SDR-005-hot-reload-docker.md) |
 | **SDR-006** | Contratos Oficiais e Interatividade via Springdoc OpenAPI (Swagger) | [Acessar Documento](SDRs/SDR-006-openapi-swagger.md) |
 | **SDR-007** | Automação de Seeds (DataSeeder) e Documentação Estática (GitHub Pages) | [Acessar Documento](SDRs/SDR-007-automacao-dev-e-docs-estaticas.md) |
+| **SDR-008** | Adoção do Lombok e Template de Pull Requests | [Acessar Documento](SDRs/SDR-008-adocao-do-lombok.md) |
 
 ---
 ## 🧠 O Papel dos SDRs no Projeto

@@ -14,6 +14,7 @@ Este projeto é uma API RESTful avançada desenvolvida em **Java + Spring Boot**
 * **Linguagem:** Java 21
 * **Framework:** Spring Boot 3.3.x
 * **Build Tool:** Maven (Wrapper)
+* **Produtividade:** Lombok (Reducao de Boilerplate)
 * **Qualidade:** Testes Unitários e de Integração (JUnit 5 + MockMvc)
 * **Infraestrutura:** Docker e Docker Compose (com Hot-Reload mapeado para Dev)
 
