@@ -25,3 +25,6 @@ O foco desta entrega não foi apenas cumprir os requisitos funcionais básicos (
 - Arquitetura documentada via SDRs (System Design Records) na pasta `dev-docs/`.
 - Repositório sob os termos da licença livre Mozilla Public License Version 2.0 (MPL-2.0).
 
+
+---
+[1.0.0]: https://github.com/carloskvasir/api_rest_spring/releases/tag/v1.0.0
