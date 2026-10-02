@@ -35,6 +35,13 @@ public class CategoriaService {
             .orElseThrow(() -> new ResourceNotFoundException("Categoria não encontrada com id: " + id));
     }
 
+    public Categoria buscarPorNome(String nome) {
+        return db.stream()
+            .filter(e -> e.getNome().equalsIgnoreCase(nome.trim()))
+            .findFirst()
+            .orElseThrow(() -> new ResourceNotFoundException("Categoria não encontrada com o nome: " + nome));
+    }
+
     public Categoria atualizar(Long id, CategoriaRequestDTO dto) {
         Categoria entity = buscarPorId(id);
         entity.setNome(dto.nome());

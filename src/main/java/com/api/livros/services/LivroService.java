@@ -40,9 +40,12 @@ public class LivroService {
         List<Livro> stream = livros;
         
         if (categoriaNome != null && !categoriaNome.isBlank()) {
+            // Garante que a categoria buscada existe, senao joga ResourceNotFoundException 404
+            Categoria categoria = categoriaService.buscarPorNome(categoriaNome);
+            
             stream = livros.stream()
                 .filter(l -> l.getCategoria() != null && 
-                             l.getCategoria().getNome().equalsIgnoreCase(categoriaNome.trim()))
+                             l.getCategoria().getId().equals(categoria.getId()))
                 .collect(Collectors.toList());
         }
         

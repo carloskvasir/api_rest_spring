@@ -60,4 +60,12 @@ class LivroControllerTest {
                 .andExpect(jsonPath("$.title", is("Resource Not Found")))
                 .andExpect(jsonPath("$.detail", containsString("Livro não encontrado")));
     }
+
+    @Test
+    void deveRetornar404AoBuscarPorCategoriaInexistente() throws Exception {
+        mockMvc.perform(get("/livros?categoria=Invalida_Nao_Existe"))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.title", is("Resource Not Found")))
+                .andExpect(jsonPath("$.detail", containsString("Categoria não encontrada com o nome: Invalida_Nao_Existe")));
+    }
 }

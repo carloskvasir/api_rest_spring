@@ -47,7 +47,13 @@ class LivroServiceTest {
 
         assertThat(livroService.listarTodos(0, 10, "fantasia")).hasSize(1);
         assertThat(livroService.listarTodos(0, 10, "FICÇÃO CIENTÍFICA")).hasSize(1);
-        assertThat(livroService.listarTodos(0, 10, "Aventura")).isEmpty();
+    }
+
+    @Test
+    void deveLancarExcecaoAoFiltrarPorCategoriaInexistente() {
+        assertThatThrownBy(() -> livroService.listarTodos(0, 10, "Aventura"))
+                .isInstanceOf(ResourceNotFoundException.class)
+                .hasMessageContaining("Categoria não encontrada com o nome: Aventura");
     }
 
     @Test
