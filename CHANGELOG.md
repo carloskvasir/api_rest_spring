@@ -12,6 +12,7 @@ Estabelecer a primeira versão estável (MVP) de uma API RESTful de nível profi
 O foco desta entrega não foi apenas cumprir os requisitos funcionais básicos (CRUD), mas sim estruturar **um alicerce arquitetural definitivo, testado, conteinerizado e impecavelmente documentado**. Essa blindagem (SDRs, Swagger, Docker, Tratamento RFC 7807) garante que as próximas versões — como a futura integração de um banco de dados relacional — sejam feitas sem qualquer risco de quebrar o contrato da API original.
 
 ### Added
+- Atualização do manifesto `GEMINI.md` com diretrizes estritas de Sanity Check, Commits Atômicos, Regra do Escoteiro e Anti-Destruição de Código.
 - Inicialização estrutural do projeto em Spring Boot 3.3 e Java 21 (Camadas: `controllers`, `services`, `dtos`, `models`, `exceptions`).
 - Suporte a operações completas e parciais via REST (`GET`, `POST`, `PUT`, `PATCH`, `DELETE`).
 - Tratamento global de exceções formatado em JSON seguindo o padrão RFC 7807 (`ProblemDetail`).

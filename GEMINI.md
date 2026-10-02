@@ -25,3 +25,11 @@
 - **SDR Obrigatório:** Sempre que introduzir um novo pacote, padrão de mercado, dependência de infraestrutura ou tomar uma decisão arquitetural, VOCÊ DEVE automaticamente criar ou atualizar um documento em `dev-docs/SDRs/` justificando a escolha (Contexto, Decisão e Consequências).
 - **Changelog Vivo:** A regra de ouro é: nenhuma tarefa funcional está concluída até que o histórico seja registrado. Sempre que você terminar uma funcionalidade, melhoria ou correção, VOCÊ DEVE atualizar o arquivo `CHANGELOG.md` na raiz do projeto. 
 - Mantenha estritamente o padrão "Keep a Changelog" (com as tags `Added`, `Changed`, `Fixed`) e lembre-se de registrar a "Intenção do Pacote" / "Intenção da Release" para contextualizar o momento do software.
+
+## 🛡️ Regras de Ouro (Segurança e Estabilidade)
+- **Sanity Check Obrigatório:** Você NUNCA deve executar um `git commit` sem antes rodar `./mvnw clean test` com sucesso (`BUILD SUCCESS`). Código que não compila ou quebra testes é estritamente proibido de entrar no histórico do Git.
+- **Proteção Anti-Destruição:** Você é expressamente proibido de deletar classes inteiras, pacotes, arquivos estruturais ou endpoints existentes sem antes pedir a minha autorização explícita (prompt do usuário).
+
+## 🧠 Engenharia e Boas Práticas Avançadas
+- **Commits Atômicos:** Para tarefas complexas ou extensas, você deve fragmentar a entrega em múltiplos pequenos commits lógicos (ex: um commit focado na Model/DTO, outro nos Services, outro na documentação) em vez de entregar um único "commitão" gigante e confuso.
+- **Regra do Escoteiro (Boy Scout Rule):** Sempre que você abrir um arquivo para realizar uma alteração solicitada, aja proativamente caçando *'code smells'*, removendo imports não utilizados e melhorando a legibilidade e otimização do código antes de prosseguir. Deixe o arquivo sempre mais limpo do que o encontrou.
