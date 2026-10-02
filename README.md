@@ -1,5 +1,8 @@
 # API REST de Controle de Livros
 
+> 🔗 **Repositório Oficial no GitHub:** [carloskvasir/api_rest_spring](https://github.com/carloskvasir/api_rest_spring)
+> _(Caso esteja avaliando este projeto a partir de um backup .zip, utilize o link acima para acessar o código online atualizado)._
+
 Este projeto é uma API RESTful avançada desenvolvida em **Java + Spring Boot** para gerenciar um cadastro de livros, seguindo rigorosos padrões RESTful (RFC 7807, cabeçalhos Location, PATCH parcial) e arquitetura validada por SDRs (System Design Reviews). O armazenamento dos dados é realizado em memória.
 
 ## 👥 Alunos
