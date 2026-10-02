@@ -4,7 +4,17 @@ Todos os marcos e mudanças notáveis neste projeto serão documentados neste ar
 
 O formato baseia-se no [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e é gerado automaticamente via `git-cliff`.
 
+## [1.6.0](https://github.com/carloskvasir/api_rest_spring/releases/tag/v1.6.0) - 2026-10-02
+
+### 🚀 Features
+
+- Permite filtro de livros pelo nome da categoria em texto ao inves do id numérico
+
 ## [1.5.0](https://github.com/carloskvasir/api_rest_spring/releases/tag/v1.5.0) - 2026-10-02
+
+### ⚙️ Tarefas de Manutenção (Chore)
+
+- Release da versao 1.5.0
 
 ### 🚀 Features
 
