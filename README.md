@@ -42,7 +42,8 @@ Copyright (c) 2026 Carlos Kvasir - [carloskvasir.dev](https://carloskvasir.dev)
 
 Veja o arquivo [LICENSE](LICENSE) para mais detalhes sobre as permissões e limitações.
 
-## 🌐 Documentação Online (GitHub Pages)
+## 🌐 Documentação Online (Swagger UI)
 
-Uma versão estática da documentação interativa (Swagger UI) está disponível na pasta `/docs`. 
-Para visualizar os contratos sem precisar rodar o projeto, ative o **GitHub Pages** no repositório apontando para a branch `main` e a pasta `/docs`.
+A documentação interativa e os contratos da API estão hospedados publicamente através do GitHub Pages. Você pode interagir com a interface (ler schemas, descobrir payloads e formatos esperados) sem precisar executar o projeto localmente:
+
+👉 **[Acessar a Documentação da API ao vivo (Swagger Online)](https://carloskvasir.github.io/api_rest_spring/)**
