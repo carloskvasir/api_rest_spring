@@ -33,3 +33,7 @@
 ## 🧠 Engenharia e Boas Práticas Avançadas
 - **Commits Atômicos:** Para tarefas complexas ou extensas, você deve fragmentar a entrega em múltiplos pequenos commits lógicos (ex: um commit focado na Model/DTO, outro nos Services, outro na documentação) em vez de entregar um único "commitão" gigante e confuso.
 - **Regra do Escoteiro (Boy Scout Rule):** Sempre que você abrir um arquivo para realizar uma alteração solicitada, aja proativamente caçando *'code smells'*, removendo imports não utilizados e melhorando a legibilidade e otimização do código antes de prosseguir. Deixe o arquivo sempre mais limpo do que o encontrou.
+
+## 🏷️ Processo de Release e Tags
+- **Gestão de Versões:** Toda vez que um ciclo de desenvolvimento for fechado (consolidando a versão no `pom.xml` e no `CHANGELOG.md`), você deve obrigatoriamente criar a **Git Tag** correspondente (ex: `v1.1.0`) e orquestrar a publicação da **Release no GitHub** via CLI (`gh release create`), sempre solicitando permissão antes.
+- **Padrão de Notas da Release:** As notas publicadas na página do GitHub devem resumir a intenção do pacote (usando a `v1.0.0` como modelo) e devem **SEMPRE conter um link** em seu rodapé direcionando o usuário para o arquivo `CHANGELOG.md`, incentivando a leitura do histórico completo de alterações.
