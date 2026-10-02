@@ -4,7 +4,17 @@ Todos os marcos e mudanças notáveis neste projeto serão documentados neste ar
 
 O formato baseia-se no [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e é gerado automaticamente via `git-cliff`.
 
+## [1.6.2](https://github.com/carloskvasir/api_rest_spring/releases/tag/v1.6.2) - 2026-10-02
+
+### ⚙️ Tarefas de Manutenção (Chore)
+
+- Corrige link de changelog das releases para apontar a tag atual e nao a branch main
+
 ## [1.6.1](https://github.com/carloskvasir/api_rest_spring/releases/tag/v1.6.1) - 2026-10-02
+
+### ⚙️ Tarefas de Manutenção (Chore)
+
+- Release da versao 1.6.1
 
 ### 🐛 Bug Fixes
 
