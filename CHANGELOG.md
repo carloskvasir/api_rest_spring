@@ -4,6 +4,13 @@ Todos os marcos e mudanças notáveis neste projeto serão documentados neste ar
 
 O formato baseia-se no [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e é gerado automaticamente via `git-cliff`.
 
+## [1.2.0](https://github.com/carloskvasir/api_rest_spring/releases/tag/v1.2.0) - 2026-10-02
+
+### 🚀 Features
+
+- Configura cliff.toml para rastrear sdrs e gerar links de releases no changelog
+- Automatiza envio de release para o github no script de release local
+
 ## [1.1.0](https://github.com/carloskvasir/api_rest_spring/releases/tag/v1.1.0) - 2026-10-02
 
 ### ⚙️ Tarefas de Manutenção (Chore)
