@@ -1,32 +1,56 @@
-# Changelog
+## [1.1.0] - 2026-10-02
 
-Todos os marcos e mudanças notáveis neste projeto serão documentados neste arquivo.
+### 🚀 Features
 
-O formato baseia-se no [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/),
-e este projeto adota o [Versionamento Semântico](https://semver.org/lang/pt-BR/).
+- Adiciona script de automacao de releases locais (git-cliff)
 
-## [1.0.0] - 2026-10-01
+### 📚 Documentation
 
-### Intenção do Pacote
-Estabelecer a primeira versão estável (MVP) de uma API RESTful de nível profissional para o controle de livros em memória. 
-O foco desta entrega não foi apenas cumprir os requisitos funcionais básicos (CRUD), mas sim estruturar **um alicerce arquitetural definitivo, testado, conteinerizado e impecavelmente documentado**. Essa blindagem (SDRs, Swagger, Docker, Tratamento RFC 7807) garante que as próximas versões — como a futura integração de um banco de dados relacional — sejam feitas sem qualquer risco de quebrar o contrato da API original.
+- Formaliza fluxo obrigatorio de releases, tags e changelogs
+- Transforma dev-docs/readme em um indice estruturado de SDRs
+## [1.0.0] - 2026-10-02
 
-### Added
-- Transformacao do `dev-docs/README.md` num Índice Mestre de SDRs otimizado para o consumo da IA.
-- Estabelecimento do processo contínuo de Git Tags e Releases via CLI nas diretrizes da IA (`GEMINI.md`), exigindo links dinâmicos para o Changelog.
-- Atualização do manifesto `GEMINI.md` com diretrizes estritas de Sanity Check, Commits Atômicos, Regra do Escoteiro e Anti-Destruição de Código.
-- Inicialização estrutural do projeto em Spring Boot 3.3 e Java 21 (Camadas: `controllers`, `services`, `dtos`, `models`, `exceptions`).
-- Suporte a operações completas e parciais via REST (`GET`, `POST`, `PUT`, `PATCH`, `DELETE`).
-- Tratamento global de exceções formatado em JSON seguindo o padrão RFC 7807 (`ProblemDetail`).
-- Inserção de cabeçalhos maduros como o `Location` (status 201).
-- Infraestrutura completa de testes Unitários e de Integração (JUnit 5, MockMvc, AssertJ).
-- Dockerização com suporte a Hot-Reload para agilidade no ambiente de desenvolvimento (`docker-compose.yml`).
-- Componente `DataSeeder` para popular a base em memória automaticamente com 5 registros clássicos de imediato.
-- Integração do pacote **Springdoc OpenAPI** gerando uma interface visual do Swagger UI na raiz da aplicação (`/`).
-- Criação e hospedagem de documentação estática do Swagger na pasta `/docs` via GitHub Pages.
-- Arquitetura documentada via SDRs (System Design Records) na pasta `dev-docs/`.
-- Repositório sob os termos da licença livre Mozilla Public License Version 2.0 (MPL-2.0).
+### 🚀 Features
 
+- Implementa api de controle de livros
+- Adiciona HomeController (/) para facilitar testes manuais e altera porta Docker para 8000
+- Adiciona CommandLineRunner (DataSeeder) para popular API com dados iniciais
+- Integra padrao OpenAPI (Swagger UI) para documentacao e testes interativos (SDR-006)
+- Move interface Swagger UI para a raiz e centraliza a documentacao (textos do projeto) no padrao OpenAPI
 
----
-[1.0.0]: https://github.com/carloskvasir/api_rest_spring/releases/tag/v1.0.0
+### 🐛 Bug Fixes
+
+- Resolve bug de rede do docker usando network_mode host e ajusta porta para 8080
+
+### 📚 Documentation
+
+- Configura diretrizes da IA e cria documentacao base (SDRs e GEMINI.md)
+- Aprimora padrao de SDR baseado no modelo de revisao do Bruno Russo
+- Atualiza readme e adiciona SDR-005 documentando o hot-reload via docker
+- Migra projeto para a licenca MPL-2.0 (Carlos Kvasir)
+- Adiciona David Marlon na secao de alunos do README
+- Adiciona David Marlon na secao de alunos do OpenAPI (Swagger)
+- Adiciona link do repositorio oficial no inicio do README
+- Exporta swagger ui estatico para hospedagem no github pages
+- Adiciona link publico direto do github pages no readme
+- Adiciona SDR-007 documentando os seeds e o github pages
+- Inicializa CHANGELOG.md seguindo o padrao keep-a-changelog
+- Adiciona diretrizes rigorosas para a IA automatizar atualizacoes de Changelog e SDRs
+- Reforca manifesto de IA com regras de sanity check, commits atomicos e boy scout
+
+### 🚜 Refactor
+
+- Eleva maturidade restful da aplicacao (Location, RFC7807, PATCH, Paginacao)
+
+### 🧪 Testing
+
+- Implenta cultura de testes (SDR-003) e validacoes
+- Implementa cultura de testes unitarios e integrados (SDR-003)
+
+### ⚙️ Miscellaneous Tasks
+
+- Setup inicial do projeto de Controle de Livros
+- Adiciona suporte a docker multi-stage e docker-compose (SDR-004)
+- Configura hot-reload via volume no docker-compose para dev
+- Limpa repositorio removendo PDF do trabalho, plano de execucao e arquivos temporarios
+- Realiza release da versao 1.0.0 e sincroniza pom.xml
