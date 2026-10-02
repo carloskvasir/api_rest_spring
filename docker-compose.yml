@@ -6,15 +6,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: build # Puxa apenas o Estágio 1 (que tem JDK e Maven)
+      target: build
+    network_mode: "host"
     volumes:
-      - ./:/app # Espelha o seu código local para dentro do container
-      - maven-cache:/root/.m2 # Cria um volume para salvar dependências sem misturar com sua máquina
-    ports:
-      - "8000:8080"
+      - ./:/app
+      - ~/.m2:/root/.m2
     environment:
       - TZ=America/Sao_Paulo
-    command: ./mvnw spring-boot:run # Inicia em modo Dev (Live Reload)
-
-volumes:
-  maven-cache:
+    command: ./mvnw spring-boot:run
