@@ -12,11 +12,27 @@ public class OpenApiConfig {
 
     @Bean
     public OpenAPI customOpenAPI() {
+        String projectDescription = """
+            **API REST de Controle de Livros** desenvolvida em Java 21 e Spring Boot 3.3.
+            
+            O armazenamento dos dados é realizado temporariamente em memória. Este sistema foi 
+            cuidadosamente arquitetado através de *SDRs (System Design Reviews)* e é focado na adoção de boas 
+            práticas e Cultura de Qualidade, incluindo cobertura rígida de **Testes Unitários e de Integração**.
+            
+            ### Destaques e Adoção de Padrões RESTful:
+            * **RFC 7807 (Problem Details):** Tratamento padronizado de exceções e erros HTTP para clientes.
+            * **Header Location:** O endpoint de `POST` retorna HTTP 201 Created acompanhado do cabeçalho seguro para a URI do novo recurso.
+            * **Atualização Parcial:** Suporte ao método `PATCH` para atualizações eficientes e dinâmicas, além do clássico `PUT` integral.
+            
+            ### 🌱 Seeds Automáticos
+            O ambiente de desenvolvimento (esta interface) sobe com a base de dados populada por 5 livros clássicos (Duna, 1984, etc.) para que você possa testar os endpoints `GET` imediatamente, sem precisar realizar cadastros manuais prévios!
+            """;
+
         return new OpenAPI()
                 .info(new Info()
                         .title("API REST de Controle de Livros")
                         .version("1.0.0")
-                        .description("Documentação interativa da API de Controle de Livros (Trabalho 1).")
+                        .description(projectDescription)
                         .contact(new Contact()
                                 .name("Carlos Kvasir")
                                 .url("https://carloskvasir.dev")

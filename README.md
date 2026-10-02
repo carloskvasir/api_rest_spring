@@ -27,7 +27,7 @@ O ambiente foi totalmente dockerizado com **Live Reload**. Qualquer alteração 
 ## 📚 Endpoints e Documentação
 
 Para facilitar os testes (via Postman, Insomnia ou Navegador), **acesse a raiz da aplicação (`http://localhost:8080/`)**. 
-Nós criamos uma "Vitrine" (HomeController) que retornará um JSON detalhando todos os endpoints disponíveis, seus métodos HTTP e exemplos de payloads esperados para cadastro e atualização.
+A raiz da aplicação redirecionará você para a maravilhosa interface visual do Swagger UI, contendo o contrato OpenAPI detalhado e executável de todos os endpoints, seus métodos HTTP e exemplos de payloads esperados para cadastro e atualização.
 
 As documentações das decisões arquiteturais (SDRs) e padrões da IA (GEMINI.md) estão armazenadas na pasta `/dev-docs/`.
 
