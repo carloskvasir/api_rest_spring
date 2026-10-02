@@ -4,6 +4,7 @@ Este projeto é uma API RESTful avançada desenvolvida em **Java + Spring Boot**
 
 ## 👥 Alunos
 * Carlos Kvasir Lima
+* David Marlon
 
 ## 🛠️ Tecnologias e Ferramentas
 
