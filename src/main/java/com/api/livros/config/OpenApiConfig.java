@@ -19,6 +19,10 @@ public class OpenApiConfig {
             cuidadosamente arquitetado através de *SDRs (System Design Reviews)* e é focado na adoção de boas 
             práticas e Cultura de Qualidade, incluindo cobertura rígida de **Testes Unitários e de Integração**.
             
+            ### 👥 Alunos
+            * Carlos Kvasir Lima
+            * David Marlon
+            
             ### Destaques e Adoção de Padrões RESTful:
             * **RFC 7807 (Problem Details):** Tratamento padronizado de exceções e erros HTTP para clientes.
             * **Header Location:** O endpoint de `POST` retorna HTTP 201 Created acompanhado do cabeçalho seguro para a URI do novo recurso.
@@ -34,7 +38,7 @@ public class OpenApiConfig {
                         .version("1.0.0")
                         .description(projectDescription)
                         .contact(new Contact()
-                                .name("Carlos Kvasir")
+                                .name("Carlos Kvasir e David Marlon")
                                 .url("https://carloskvasir.dev")
                                 .email("gpg@kvasir.dev"))
                         .license(new License()
