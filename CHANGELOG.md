@@ -4,7 +4,17 @@ Todos os marcos e mudanças notáveis neste projeto serão documentados neste ar
 
 O formato baseia-se no [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e é gerado automaticamente via `git-cliff`.
 
+## [1.3.0](https://github.com/carloskvasir/api_rest_spring/releases/tag/v1.3.0) - 2026-10-02
+
+### 🚀 Features
+
+- Implementa lombok para reducao de boilerplate e pr template ([**SDR-008**](dev-docs/README.md))
+
 ## [1.2.0](https://github.com/carloskvasir/api_rest_spring/releases/tag/v1.2.0) - 2026-10-02
+
+### ⚙️ Tarefas de Manutenção (Chore)
+
+- Release da versao 1.2.0
 
 ### 🚀 Features
 
