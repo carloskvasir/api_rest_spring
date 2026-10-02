@@ -20,3 +20,8 @@
 - A regra é clara: NENHUMA nova funcionalidade, refatoração ou correção de bug deve ser concluída sem a devida cobertura de testes automatizados (Unitários e/ou de Integração).
 - Utilize a stack padrão do Spring Boot para testes: JUnit 5, AssertJ, Mockito e MockMvc.
 - Considere testes como a melhor documentação executável do sistema. Testes não são opcionais.
+
+## 📝 Governança e Rastreabilidade Contínua (Changelog e SDRs)
+- **SDR Obrigatório:** Sempre que introduzir um novo pacote, padrão de mercado, dependência de infraestrutura ou tomar uma decisão arquitetural, VOCÊ DEVE automaticamente criar ou atualizar um documento em `dev-docs/SDRs/` justificando a escolha (Contexto, Decisão e Consequências).
+- **Changelog Vivo:** A regra de ouro é: nenhuma tarefa funcional está concluída até que o histórico seja registrado. Sempre que você terminar uma funcionalidade, melhoria ou correção, VOCÊ DEVE atualizar o arquivo `CHANGELOG.md` na raiz do projeto. 
+- Mantenha estritamente o padrão "Keep a Changelog" (com as tags `Added`, `Changed`, `Fixed`) e lembre-se de registrar a "Intenção do Pacote" / "Intenção da Release" para contextualizar o momento do software.
