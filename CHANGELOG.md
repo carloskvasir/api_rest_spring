@@ -3,10 +3,12 @@
 Todos os marcos e mudanças notáveis neste projeto serão documentados neste arquivo.
 O formato baseia-se no [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e é gerado dinamicamente.
 
+## [1.7.0](https://github.com/carloskvasir/api_rest_spring/releases/tag/v1.7.0) - 2026-10-02
+### 🚀 Features
+- gera historico de changelog hibrido (detalhado no topo, compacto no passado)
+
 ## [1.6.2](https://github.com/carloskvasir/api_rest_spring/releases/tag/v1.6.2) - 2026-10-02
-### ⚙️ Tarefas de Manutenção (Chore)
-- corrige link de changelog das releases para apontar a tag atual e nao a branch main
-- release da versao 1.6.2
+> *(Consulte a tag acima para ver as notas completas)*
 
 ## [1.6.1](https://github.com/carloskvasir/api_rest_spring/releases/tag/v1.6.1) - 2026-10-02
 > *(Consulte a tag acima para ver as notas completas)*
