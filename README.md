@@ -41,3 +41,8 @@ Este projeto está licenciado sob a **Mozilla Public License Version 2.0 (MPL-2.
 Copyright (c) 2026 Carlos Kvasir - [carloskvasir.dev](https://carloskvasir.dev)
 
 Veja o arquivo [LICENSE](LICENSE) para mais detalhes sobre as permissões e limitações.
+
+## 🌐 Documentação Online (GitHub Pages)
+
+Uma versão estática da documentação interativa (Swagger UI) está disponível na pasta `/docs`. 
+Para visualizar os contratos sem precisar rodar o projeto, ative o **GitHub Pages** no repositório apontando para a branch `main` e a pasta `/docs`.
