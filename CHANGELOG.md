@@ -1,22 +1,33 @@
-## [1.1.0] - 2026-10-02
+# Changelog
 
-### 🚀 Features
+Todos os marcos e mudanças notáveis neste projeto serão documentados neste arquivo.
 
-- Adiciona script de automacao de releases locais (git-cliff)
+O formato baseia-se no [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e é gerado automaticamente via `git-cliff`.
+
+## [1.1.0](https://github.com/carloskvasir/api_rest_spring/releases/tag/v1.1.0) - 2026-10-02
+
+### ⚙️ Tarefas de Manutenção (Chore)
+
+- Release da versao 1.1.0
 
 ### 📚 Documentation
 
 - Formaliza fluxo obrigatorio de releases, tags e changelogs
 - Transforma dev-docs/readme em um indice estruturado de SDRs
-## [1.0.0] - 2026-10-02
 
 ### 🚀 Features
 
-- Implementa api de controle de livros
-- Adiciona HomeController (/) para facilitar testes manuais e altera porta Docker para 8000
-- Adiciona CommandLineRunner (DataSeeder) para popular API com dados iniciais
-- Integra padrao OpenAPI (Swagger UI) para documentacao e testes interativos (SDR-006)
-- Move interface Swagger UI para a raiz e centraliza a documentacao (textos do projeto) no padrao OpenAPI
+- Adiciona script de automacao de releases locais (git-cliff)
+
+## [1.0.0](https://github.com/carloskvasir/api_rest_spring/releases/tag/v1.0.0) - 2026-10-02
+
+### ⚙️ Tarefas de Manutenção (Chore)
+
+- Setup inicial do projeto de Controle de Livros
+- Adiciona suporte a docker multi-stage e docker-compose ([**SDR-004**](dev-docs/README.md))
+- Configura hot-reload via volume no docker-compose para dev
+- Limpa repositorio removendo PDF do trabalho, plano de execucao e arquivos temporarios
+- Realiza release da versao 1.0.0 e sincroniza pom.xml
 
 ### 🐛 Bug Fixes
 
@@ -26,17 +37,25 @@
 
 - Configura diretrizes da IA e cria documentacao base (SDRs e GEMINI.md)
 - Aprimora padrao de SDR baseado no modelo de revisao do Bruno Russo
-- Atualiza readme e adiciona SDR-005 documentando o hot-reload via docker
+- Atualiza readme e adiciona [**SDR-005**](dev-docs/README.md) documentando o hot-reload via docker
 - Migra projeto para a licenca MPL-2.0 (Carlos Kvasir)
 - Adiciona David Marlon na secao de alunos do README
 - Adiciona David Marlon na secao de alunos do OpenAPI (Swagger)
 - Adiciona link do repositorio oficial no inicio do README
 - Exporta swagger ui estatico para hospedagem no github pages
 - Adiciona link publico direto do github pages no readme
-- Adiciona SDR-007 documentando os seeds e o github pages
+- Adiciona [**SDR-007**](dev-docs/README.md) documentando os seeds e o github pages
 - Inicializa CHANGELOG.md seguindo o padrao keep-a-changelog
 - Adiciona diretrizes rigorosas para a IA automatizar atualizacoes de Changelog e SDRs
 - Reforca manifesto de IA com regras de sanity check, commits atomicos e boy scout
+
+### 🚀 Features
+
+- Implementa api de controle de livros
+- Adiciona HomeController (/) para facilitar testes manuais e altera porta Docker para 8000
+- Adiciona CommandLineRunner (DataSeeder) para popular API com dados iniciais
+- Integra padrao OpenAPI (Swagger UI) para documentacao e testes interativos ([**SDR-006**](dev-docs/README.md))
+- Move interface Swagger UI para a raiz e centraliza a documentacao (textos do projeto) no padrao OpenAPI
 
 ### 🚜 Refactor
 
@@ -44,13 +63,7 @@
 
 ### 🧪 Testing
 
-- Implenta cultura de testes (SDR-003) e validacoes
-- Implementa cultura de testes unitarios e integrados (SDR-003)
+- Implenta cultura de testes ([**SDR-003**](dev-docs/README.md)) e validacoes
+- Implementa cultura de testes unitarios e integrados ([**SDR-003**](dev-docs/README.md))
 
-### ⚙️ Miscellaneous Tasks
 
-- Setup inicial do projeto de Controle de Livros
-- Adiciona suporte a docker multi-stage e docker-compose (SDR-004)
-- Configura hot-reload via volume no docker-compose para dev
-- Limpa repositorio removendo PDF do trabalho, plano de execucao e arquivos temporarios
-- Realiza release da versao 1.0.0 e sincroniza pom.xml
