@@ -25,7 +25,7 @@ class LivroControllerTest {
 
     @Test
     void deveCadastrarLivroERetornar201ComLocationHeader() throws Exception {
-        LivroRequestDTO dto = new LivroRequestDTO("O Hobbit", "J.R.R. Tolkien", 300, 60.0);
+        LivroRequestDTO dto = new LivroRequestDTO("O Hobbit", "J.R.R. Tolkien", 300, 60.0, 1L);
 
         mockMvc.perform(post("/livros")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -33,13 +33,14 @@ class LivroControllerTest {
                 .andExpect(status().isCreated())
                 .andExpect(header().exists("Location")) // RFC RESTful (SDR-002)
                 .andExpect(jsonPath("$.id", notNullValue()))
-                .andExpect(jsonPath("$.titulo", is("O Hobbit")));
+                .andExpect(jsonPath("$.titulo", is("O Hobbit")))
+                .andExpect(jsonPath("$.categoria.nome", notNullValue()));
     }
 
     @Test
     void deveRetornar400AoCadastrarComValidacaoFalhaESeguirRFC7807() throws Exception {
-        // Título inválido (min 3), paginas negativo, preco negativo
-        LivroRequestDTO dto = new LivroRequestDTO("Oi", "Autor", 0, -10.0);
+        // Título inválido (min 3), paginas negativo, preco negativo, categoria nula
+        LivroRequestDTO dto = new LivroRequestDTO("Oi", "Autor", 0, -10.0, null);
 
         mockMvc.perform(post("/livros")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -48,7 +49,8 @@ class LivroControllerTest {
                 .andExpect(jsonPath("$.title", is("Bad Request"))) // ProblemDetail
                 .andExpect(jsonPath("$.invalid_params.titulo", notNullValue()))
                 .andExpect(jsonPath("$.invalid_params.quantidadePaginas", notNullValue()))
-                .andExpect(jsonPath("$.invalid_params.preco", notNullValue()));
+                .andExpect(jsonPath("$.invalid_params.preco", notNullValue()))
+                .andExpect(jsonPath("$.invalid_params.categoriaId", notNullValue()));
     }
 
     @Test

@@ -20,5 +20,8 @@ public record LivroRequestDTO(
 
     @NotNull(message = "O preço é obrigatório")
     @Positive(message = "O preço deve ser maior que zero")
-    Double preco
+    Double preco,
+
+    @NotNull(message = "O id da categoria é obrigatório")
+    Long categoriaId
 ) {}

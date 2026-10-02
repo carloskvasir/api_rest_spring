@@ -38,9 +38,10 @@ public class LivroController {
     @GetMapping
     public ResponseEntity<List<LivroResponseDTO>> listar(
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "10") int size) {
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(required = false) Long categoriaId) {
         
-        List<LivroResponseDTO> lista = livroService.listarTodos(page, size).stream()
+        List<LivroResponseDTO> lista = livroService.listarTodos(page, size, categoriaId).stream()
                 .map(LivroResponseDTO::fromEntity)
                 .collect(Collectors.toList());
         return ResponseEntity.ok(lista);

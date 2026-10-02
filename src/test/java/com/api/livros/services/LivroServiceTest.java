@@ -1,7 +1,9 @@
 package com.api.livros.services;
 
+import com.api.livros.dtos.CategoriaRequestDTO;
 import com.api.livros.dtos.LivroRequestDTO;
 import com.api.livros.exceptions.ResourceNotFoundException;
+import com.api.livros.models.Categoria;
 import com.api.livros.models.Livro;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,26 +15,32 @@ import static org.assertj.core.api.Assertions.*;
 class LivroServiceTest {
 
     private LivroService livroService;
+    private CategoriaService categoriaService;
+    private Categoria categoriaTeste;
 
     @BeforeEach
     void setUp() {
-        // Nova instância para isolamento entre os testes (evita state pollution)
-        livroService = new LivroService();
+        categoriaService = new CategoriaService();
+        livroService = new LivroService(categoriaService);
+        
+        // Criar uma categoria para ser usada nos testes de livros
+        categoriaTeste = categoriaService.salvar(new CategoriaRequestDTO("Ficção Científica"));
     }
 
     @Test
     void deveSalvarLivroComSucesso() {
-        LivroRequestDTO dto = new LivroRequestDTO("O Senhor dos Anéis", "J.R.R. Tolkien", 1200, 150.0);
+        LivroRequestDTO dto = new LivroRequestDTO("O Senhor dos Anéis", "J.R.R. Tolkien", 1200, 150.0, categoriaTeste.getId());
         Livro salvo = livroService.salvar(dto);
 
         assertThat(salvo.getId()).isNotNull();
         assertThat(salvo.getTitulo()).isEqualTo("O Senhor dos Anéis");
-        assertThat(livroService.listarTodos(0, 10)).hasSize(1);
+        assertThat(salvo.getCategoria().getNome()).isEqualTo("Ficção Científica");
+        assertThat(livroService.listarTodos(0, 10, null)).hasSize(1);
     }
 
     @Test
     void deveBuscarLivroPorIdExistente() {
-        Livro salvo = livroService.salvar(new LivroRequestDTO("1984", "George Orwell", 328, 45.0));
+        Livro salvo = livroService.salvar(new LivroRequestDTO("1984", "George Orwell", 328, 45.0, categoriaTeste.getId()));
 
         Livro encontrado = livroService.buscarPorId(salvo.getId());
         assertThat(encontrado).isNotNull();
@@ -48,7 +56,7 @@ class LivroServiceTest {
 
     @Test
     void deveAtualizarParcialmenteUmLivro() {
-        Livro salvo = livroService.salvar(new LivroRequestDTO("Clean Code", "Robert Martin", 400, 100.0));
+        Livro salvo = livroService.salvar(new LivroRequestDTO("Clean Code", "Robert Martin", 400, 100.0, categoriaTeste.getId()));
 
         Map<String, Object> campos = Map.of("preco", 120.0); // Modifica apenas o preco
         Livro atualizado = livroService.atualizarParcial(salvo.getId(), campos);
@@ -59,9 +67,9 @@ class LivroServiceTest {
 
     @Test
     void deveRemoverLivro() {
-        Livro salvo = livroService.salvar(new LivroRequestDTO("Duna", "Frank Herbert", 600, 90.0));
+        Livro salvo = livroService.salvar(new LivroRequestDTO("Duna", "Frank Herbert", 600, 90.0, categoriaTeste.getId()));
 
         livroService.remover(salvo.getId());
-        assertThat(livroService.listarTodos(0, 10)).isEmpty();
+        assertThat(livroService.listarTodos(0, 10, null)).isEmpty();
     }
 }

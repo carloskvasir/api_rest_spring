@@ -7,7 +7,8 @@ public record LivroResponseDTO(
     String titulo,
     String autor,
     Integer quantidadePaginas,
-    Double preco
+    Double preco,
+    CategoriaResponseDTO categoria
 ) {
     public static LivroResponseDTO fromEntity(Livro livro) {
         return new LivroResponseDTO(
@@ -15,7 +16,8 @@ public record LivroResponseDTO(
             livro.getTitulo(),
             livro.getAutor(),
             livro.getQuantidadePaginas(),
-            livro.getPreco()
+            livro.getPreco(),
+            CategoriaResponseDTO.fromEntity(livro.getCategoria())
         );
     }
 }

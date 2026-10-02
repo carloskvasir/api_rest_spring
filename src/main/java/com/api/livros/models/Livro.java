@@ -11,4 +11,5 @@ public class Livro {
     private String autor;
     private Integer quantidadePaginas;
     private Double preco;
+    private Categoria categoria;
 }
