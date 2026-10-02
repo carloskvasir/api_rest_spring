@@ -36,12 +36,13 @@ public class LivroService {
         return livro;
     }
 
-    public List<Livro> listarTodos(int page, int size, Long categoriaId) {
+    public List<Livro> listarTodos(int page, int size, String categoriaNome) {
         List<Livro> stream = livros;
         
-        if (categoriaId != null) {
+        if (categoriaNome != null && !categoriaNome.isBlank()) {
             stream = livros.stream()
-                .filter(l -> l.getCategoria() != null && l.getCategoria().getId().equals(categoriaId))
+                .filter(l -> l.getCategoria() != null && 
+                             l.getCategoria().getNome().equalsIgnoreCase(categoriaNome.trim()))
                 .collect(Collectors.toList());
         }
         

@@ -17,6 +17,7 @@ class LivroServiceTest {
     private LivroService livroService;
     private CategoriaService categoriaService;
     private Categoria categoriaTeste;
+    private Categoria categoriaTeste2;
 
     @BeforeEach
     void setUp() {
@@ -25,6 +26,7 @@ class LivroServiceTest {
         
         // Criar uma categoria para ser usada nos testes de livros
         categoriaTeste = categoriaService.salvar(new CategoriaRequestDTO("Ficção Científica"));
+        categoriaTeste2 = categoriaService.salvar(new CategoriaRequestDTO("Fantasia"));
     }
 
     @Test
@@ -36,6 +38,16 @@ class LivroServiceTest {
         assertThat(salvo.getTitulo()).isEqualTo("O Senhor dos Anéis");
         assertThat(salvo.getCategoria().getNome()).isEqualTo("Ficção Científica");
         assertThat(livroService.listarTodos(0, 10, null)).hasSize(1);
+    }
+
+    @Test
+    void deveFiltrarLivrosPorNomeDaCategoriaIgnorandoCaixa() {
+        livroService.salvar(new LivroRequestDTO("O Senhor dos Anéis", "J.R.R. Tolkien", 1200, 150.0, categoriaTeste2.getId()));
+        livroService.salvar(new LivroRequestDTO("Duna", "Frank Herbert", 800, 95.50, categoriaTeste.getId()));
+
+        assertThat(livroService.listarTodos(0, 10, "fantasia")).hasSize(1);
+        assertThat(livroService.listarTodos(0, 10, "FICÇÃO CIENTÍFICA")).hasSize(1);
+        assertThat(livroService.listarTodos(0, 10, "Aventura")).isEmpty();
     }
 
     @Test
