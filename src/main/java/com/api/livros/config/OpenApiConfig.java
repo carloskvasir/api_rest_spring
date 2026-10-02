@@ -35,7 +35,7 @@ public class OpenApiConfig {
         return new OpenAPI()
                 .info(new Info()
                         .title("API REST de Controle de Livros")
-                        .version("1.7.0")
+                        .version("1.7.1")
                         .description(projectDescription)
                         .contact(new Contact()
                                 .name("Carlos Kvasir e David Marlon")
